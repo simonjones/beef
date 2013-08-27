@@ -1,6 +1,6 @@
 # Beef
 
-TODO: Write a gem description
+Beef up your Ruby core with these useful extensions
 
 ## Installation
 
@@ -18,7 +18,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### String
+
+#### To Boolean
+
+  ```ruby
+  "true".to_boolean # Returns true
+  "yes".to_b # Returns true
+  "no".to_b # Returns false
+  "false".to_b # Returns false
+
+  ```
+
+### Hash
+
+#### Method Access
+
+#### Deep Merge
 
 ## Contributing
 
