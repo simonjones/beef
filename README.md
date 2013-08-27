@@ -1,4 +1,4 @@
-# Beef
+# Beef (beefup)
 
 Beef up your Ruby core with these useful extensions
 
@@ -6,7 +6,9 @@ Beef up your Ruby core with these useful extensions
 
 Add this line to your application's Gemfile:
 
-    gem 'beef'
+  ```ruby
+  gem 'beefup'
+  ```
 
 And then execute:
 
@@ -14,7 +16,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install beef
+    $ gem install beefup
+
+And require it:
+    
+  ```ruby
+  require 'beefup'
+  ```
 
 ## Usage
 
