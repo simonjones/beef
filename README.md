@@ -23,16 +23,43 @@ Or install it yourself as:
 #### To Boolean
 
   ```ruby
-  "true".to_boolean # Returns true
-  "yes".to_b # Returns true
-  "no".to_b # Returns false
-  "false".to_b # Returns false
+  "true".to_boolean
+    => true
+  "yes".to_b
+    => true
+  "no".to_b
+    => false
+  "false".to_b
+    => false
 
   ```
 
 ### Hash
 
 #### Method Access
+
+Easy access to hash values via method calls of the keys.
+
+  ```ruby
+  hash = {one: 1, two: 2, three: 3, four: 4}
+
+  # Value access
+  hash.one
+    => 1
+
+  # Key query
+  hash.one?
+    => true
+  hash.five?
+    => false
+  hash.five
+    => NoMethodError
+
+  # Value assignment
+  hash.two = "new value"
+  hash.two
+    => "new value"
+  ```
 
 #### Deep Merge
 
