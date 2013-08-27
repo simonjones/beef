@@ -1,0 +1,1 @@
+require 'beef/core_ext/nil_class/arrayify'
