@@ -1,0 +1,1 @@
+require 'beef/core_ext/fixnum/to_boolean'

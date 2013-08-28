@@ -50,6 +50,22 @@ Smarter titleising of a string which ignores certain words (E.g an, a, is, of, e
   ```ruby
   "is this an original string? yes it is".titleise
     => "Is This an Original String? Yes It Is"
+
+  "this is a title".titleise
+    => "This is a Title"
+  ```
+
+### Fixnum
+
+#### To Boolean
+
+  ```ruby
+  1.to_boolean
+    => true
+  0.to_b
+    => false
+  25.to_b
+    => true
   ```
 
 ### Hash

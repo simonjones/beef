@@ -11,7 +11,7 @@ describe "String falsey" do
   end
 end
 
-describe "String truey" do 
+describe "String truthy" do 
   it "should return true when to_b is called" do
     "true".to_b.should be_true
     "1".to_b.should be_true
