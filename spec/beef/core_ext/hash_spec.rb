@@ -41,3 +41,25 @@ describe "Hash deep merge" do
     @hash1.should == @expected_hash
   end
 end
+
+describe "Hash array access" do
+  before do
+    @hash = { :a => { :b => { :c => { :d => "Value" } } } }
+    @key_array = [:a, :b, :c, :d]
+    @key_array_fail = [:a, :b, :c, :d, :e]
+    @key_array_fail2 = [:a, :e, :c]
+  end
+
+  it "should return correct value given an array of keys" do
+    @hash.access_by_array(@key_array).should == "Value"
+  end
+
+  it "should return nil given array of keys that is too long" do
+    @hash.access_by_array(@key_array_fail).should be_nil
+  end
+
+  it "should return nil given an invalid array of keys" do
+    @hash.access_by_array(@key_array_fail2).should be_nil
+  end
+
+end
