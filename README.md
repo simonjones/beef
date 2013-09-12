@@ -106,6 +106,17 @@ Recursively merge two hashes
     => { :a => 1, :b => "b", :c => { :c1 => 2, :c2 => { :c2a => "c2a", :c2b => "c2b" } } }
   ```
 
+#### Array Access
+
+Access a nested Hash element with a given array depicting the path
+
+  ```ruby
+  hash = { :a => {:b => {:c => { :d => "Value" } } } }
+  array = [:a, :b, :c, :d]
+  hash.access_by_array(array)
+    => "Value"
+  ```
+
 ## Contributing
 
 1. Fork it
