@@ -1,4 +1,4 @@
-# Beef (beefup)
+# Beef (beefup) [![Build Status](https://secure.travis-ci.org/simonpjones/beef.png?branch=master)](http://travis-ci.org/simonpjones/beef)
 
 Beef up your Ruby core with these useful extensions
 
