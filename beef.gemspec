@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["spj3rd@googlemail.com"]
   gem.description   = "Beef up your Ruby core with these useful extensions"
   gem.summary       = "A Ruby core exntension library."
-  gem.homepage      = "http://simonjones.github.io/beef"
+  gem.homepage      = "http://simonpjones.github.io/beef"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
