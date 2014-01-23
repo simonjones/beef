@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Beef by simonpjones</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Beef</h1>
+          <h2>Ruby extension library gem</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/simonpjones/beef/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/simonpjones/beef/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/simonpjones/beef" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="beef-beefup" class="anchor" href="#beef-beefup"><span class="octicon octicon-link"></span></a>Beef (beefup)</h1>
+
+<p>Beef up your Ruby core with these useful extensions</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-ruby"><pre>  <span class="n">gem</span> <span class="s1">'beefup'</span>
+</pre></div>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install beefup
+</code></pre>
+
+<p>And require it:</p>
+
+<div class="highlight highlight-ruby"><pre>  <span class="nb">require</span> <span class="s1">'beefup'</span>
+</pre></div>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="string" class="anchor" href="#string"><span class="octicon octicon-link"></span></a>String</h3>
+
+<h4>
+<a name="to-boolean" class="anchor" href="#to-boolean"><span class="octicon octicon-link"></span></a>To Boolean</h4>
+
+<div class="highlight highlight-ruby"><pre>  <span class="s2">"true"</span><span class="o">.</span><span class="n">to_boolean</span>
+    <span class="o">=&gt;</span> <span class="kp">true</span>
+  <span class="s2">"yes"</span><span class="o">.</span><span class="n">to_b</span>
+    <span class="o">=&gt;</span> <span class="kp">true</span>
+  <span class="s2">"no"</span><span class="o">.</span><span class="n">to_b</span>
+    <span class="o">=&gt;</span> <span class="kp">false</span>
+  <span class="s2">"false"</span><span class="o">.</span><span class="n">to_b</span>
+    <span class="o">=&gt;</span> <span class="kp">false</span>
+  <span class="s2">"something that isn't falsey"</span><span class="o">.</span><span class="n">to_boolean</span>
+    <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div>
+
+<h4>
+<a name="titleise" class="anchor" href="#titleise"><span class="octicon octicon-link"></span></a>Titleise</h4>
+
+<p>Smarter titleising of a string which ignores certain words (E.g an, a, is, of, etc..) when they don't appear at the beginning or the end of the string.</p>
+
+<div class="highlight highlight-ruby"><pre>  <span class="s2">"is this an original string? yes it is"</span><span class="o">.</span><span class="n">titleise</span>
+    <span class="o">=&gt;</span> <span class="s2">"Is This an Original String? Yes It Is"</span>
+
+  <span class="s2">"this is a title"</span><span class="o">.</span><span class="n">titleise</span>
+    <span class="o">=&gt;</span> <span class="s2">"This is a Title"</span>
+</pre></div>
+
+<h3>
+<a name="fixnum" class="anchor" href="#fixnum"><span class="octicon octicon-link"></span></a>Fixnum</h3>
+
+<h4>
+<a name="to-boolean-1" class="anchor" href="#to-boolean-1"><span class="octicon octicon-link"></span></a>To Boolean</h4>
+
+<div class="highlight highlight-ruby"><pre>  <span class="mi">1</span><span class="o">.</span><span class="n">to_boolean</span>
+    <span class="o">=&gt;</span> <span class="kp">true</span>
+  <span class="mi">0</span><span class="o">.</span><span class="n">to_b</span>
+    <span class="o">=&gt;</span> <span class="kp">false</span>
+  <span class="mi">25</span><span class="o">.</span><span class="n">to_b</span>
+    <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div>
+
+<h3>
+<a name="hash" class="anchor" href="#hash"><span class="octicon octicon-link"></span></a>Hash</h3>
+
+<h4>
+<a name="method-access" class="anchor" href="#method-access"><span class="octicon octicon-link"></span></a>Method Access</h4>
+
+<p>Easy access to hash values via method calls of the keys.</p>
+
+<div class="highlight highlight-ruby"><pre>  <span class="nb">hash</span> <span class="o">=</span> <span class="p">{</span><span class="ss">one</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">two</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="ss">three</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">four</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+
+  <span class="c1"># Value access</span>
+  <span class="nb">hash</span><span class="o">.</span><span class="n">one</span>
+    <span class="o">=&gt;</span> <span class="mi">1</span>
+
+  <span class="c1"># Key query</span>
+  <span class="nb">hash</span><span class="o">.</span><span class="n">one?</span>
+    <span class="o">=&gt;</span> <span class="kp">true</span>
+  <span class="nb">hash</span><span class="o">.</span><span class="n">five?</span>
+    <span class="o">=&gt;</span> <span class="kp">false</span>
+  <span class="nb">hash</span><span class="o">.</span><span class="n">five</span>
+    <span class="o">=&gt;</span> <span class="no">NoMethodError</span>
+
+  <span class="c1"># Value assignment</span>
+  <span class="nb">hash</span><span class="o">.</span><span class="n">two</span> <span class="o">=</span> <span class="s2">"new value"</span>
+  <span class="nb">hash</span><span class="o">.</span><span class="n">two</span>
+    <span class="o">=&gt;</span> <span class="s2">"new value"</span>
+</pre></div>
+
+<h4>
+<a name="deep-merge" class="anchor" href="#deep-merge"><span class="octicon octicon-link"></span></a>Deep Merge</h4>
+
+<p>Recursively merge two hashes</p>
+
+<div class="highlight highlight-ruby"><pre>  <span class="n">hash_1</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:a</span> <span class="o">=&gt;</span> <span class="s2">"a"</span><span class="p">,</span> <span class="ss">:b</span> <span class="o">=&gt;</span> <span class="s2">"b"</span><span class="p">,</span> <span class="ss">:c</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:c1</span> <span class="o">=&gt;</span> <span class="s2">"c1"</span><span class="p">,</span> <span class="ss">:c2</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:c2a</span> <span class="o">=&gt;</span> <span class="s2">"c2a"</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">hash_2</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:a</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:c</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:c1</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="ss">:c2</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:c2b</span> <span class="o">=&gt;</span> <span class="s2">"c2b"</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">hash_1</span><span class="o">.</span><span class="n">deep_merge</span><span class="p">(</span><span class="n">hash_2</span><span class="p">)</span> 
+    <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:a</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:b</span> <span class="o">=&gt;</span> <span class="s2">"b"</span><span class="p">,</span> <span class="ss">:c</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:c1</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="ss">:c2</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:c2a</span> <span class="o">=&gt;</span> <span class="s2">"c2a"</span><span class="p">,</span> <span class="ss">:c2b</span> <span class="o">=&gt;</span> <span class="s2">"c2b"</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+</pre></div>
+
+<h4>
+<a name="array-access" class="anchor" href="#array-access"><span class="octicon octicon-link"></span></a>Array Access</h4>
+
+<p>Access a nested Hash element with a given array depicting the path</p>
+
+<div class="highlight highlight-ruby"><pre>  <span class="nb">hash</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:a</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:b</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:c</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:d</span> <span class="o">=&gt;</span> <span class="s2">"Value"</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">array</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="ss">:d</span><span class="o">]</span>
+  <span class="nb">hash</span><span class="o">.</span><span class="n">access_by_array</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+    <span class="o">=&gt;</span> <span class="s2">"Value"</span>
+</pre></div>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+        </section>
+
+        <footer>
+          Beef is maintained by <a href="https://github.com/simonpjones">simonpjones</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
