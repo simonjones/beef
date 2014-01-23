@@ -1,3 +1,4 @@
+# encoding: utf-8
 class String
   IGNORE =  %w( the is to a an and as at but by for if in of on or via )
   REG_IGNORE = IGNORE.join('|')
