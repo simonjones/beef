@@ -57,3 +57,10 @@ describe String do
     end
   end
 end
+
+describe String do
+  it "should return false if non numerical" do
+    "not a number".is_number?.should be_false
+    "123123".is_number?.should be_true
+  end
+end
